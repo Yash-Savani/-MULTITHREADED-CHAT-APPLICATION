@@ -86,3 +86,4 @@ Though this version lacks features like **private messaging** or **user authenti
 
 By completing this project, I gained hands-on experience in building networked applications and handling multiple concurrent connections, which are crucial in developing scalable real-time systems.
 
+![Image](https://github.com/user-attachments/assets/6988d1f1-b412-430e-8851-9d3a0efca944)
