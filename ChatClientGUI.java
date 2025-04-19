@@ -1,4 +1,4 @@
- package ChatApp;
+package ChatApp;
 
 import javax.swing.*;
 import java.awt.*;
