@@ -28,26 +28,21 @@ public class ChatClientGUI extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
-        // Emoji + Theme Toggle Panel (Top)
         emojiPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         add(emojiPanel, BorderLayout.NORTH);
 
-        // Add emojis
         addEmojis();
 
-        // Add theme toggle
         themeToggleButton = new JButton("Switch to Light ☀️");
         themeToggleButton.setFont(new Font("Arial", Font.PLAIN, 12));
         themeToggleButton.addActionListener(e -> toggleTheme());
         emojiPanel.add(Box.createHorizontalStrut(10)); // spacing
         emojiPanel.add(themeToggleButton);
 
-        // Chat area
         chatArea = new JTextArea();
         chatArea.setEditable(false);
         add(new JScrollPane(chatArea), BorderLayout.CENTER);
 
-        // Input panel
         JPanel bottomPanel = new JPanel(new BorderLayout());
         inputField = new JTextField();
         sendButton = new JButton("Send");
@@ -56,11 +51,10 @@ public class ChatClientGUI extends JFrame {
         bottomPanel.add(sendButton, BorderLayout.EAST);
         add(bottomPanel, BorderLayout.SOUTH);
 
-        // Send button action
         sendButton.addActionListener(e -> sendMessage());
         inputField.addActionListener(e -> sendMessage());
 
-        applyTheme(); // Apply dark mode by default
+        applyTheme(); 
         connectToServer();
         setVisible(true);
     }
@@ -71,26 +65,21 @@ public class ChatClientGUI extends JFrame {
 
         Font font = new Font("Monospaced", Font.PLAIN, 14);
 
-        // Chat area
         chatArea.setBackground(bgColor);
         chatArea.setForeground(fgColor);
         chatArea.setFont(font);
 
-        // Input field
         inputField.setBackground(darkMode ? Color.DARK_GRAY : Color.WHITE);
         inputField.setForeground(fgColor);
         inputField.setCaretColor(fgColor);
         inputField.setFont(font);
 
-        // Send button
         sendButton.setBackground(null);
         sendButton.setForeground(fgColor);
         sendButton.setFont(font);
 
-        // Emoji panel
         emojiPanel.setBackground(bgColor);
 
-        // Theme toggle text
         themeToggleButton.setText(darkMode ? "Switch to Light ☀️" : "Switch to Dark 🌙");
 
         getContentPane().setBackground(bgColor);
